@@ -1,12 +1,14 @@
-import express from 'express'
-const router = express.Router()
+import controllers from '@controllers'
 
-router.get('/', (req, res) => {
-  res.json({
-    result: {
-      message: 'All Posts'
-    }
-  })
-})
+/**
+ * @param {express.Router} router
+ * @return {express.Router}
+ */
+function PostsRoutes(router) {
+  router.get('/', controllers.PostsController.getPosts)
+  router.post('/', controllers.PostsController.saveNewPost)
 
-export default router
+  return router
+}
+
+export default PostsRoutes

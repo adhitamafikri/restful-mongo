@@ -3,21 +3,21 @@ import dotenv from 'dotenv'
 import bodyParser from 'body-parser'
 import 'dotenv/config'
 
-import routes from '@routes'
+import loadRoutes from '@routes'
 
-import { ConnectDB } from '@database/connection'
+import { ConnectDB } from '@database/mongo/connection'
 
-const router = express()
+const app = express()
 
 // Middlewares
-router.use(bodyParser.json())
+app.use(bodyParser.json())
 
 // Routes
-routes(router)
+loadRoutes(app)
 
 // Connect DB
 ConnectDB()
 
-router.listen('4005',function() {
+app.listen('4005',function() {
   console.log('running on :4005')
 })

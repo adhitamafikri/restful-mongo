@@ -9,8 +9,12 @@
   },
   "_moduleAliases": {
     "@config": "src/config",
+    "@routes": "src/routes",
     "@database": "src/database",
-    "@routes": "src/routes"
+    "@models": "src/models",
+    "@controllers": "src/controllers",
+    "@services": "src/services",
+    "@repositories": "src/repositories"
   },
   "dependencies": {
     "dotenv": "^8.1.0",

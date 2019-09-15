@@ -1,12 +1,16 @@
-import express from 'express'
-const router = express.Router()
+import controllers from '@controllers'
 
-router.get('/', (req, res) => {
-  res.json({
-    result: {
-      message: 'Homepage'
-    }
-  })
-})
+/**
+ * @param {express.Router} router
+ * @return {express.Router}
+ */
+function HomeRoutes(router) {
+  console.log('In the HomeRoutes!')
+  const controller = new controllers.HomeController()
 
-export default router
+  router.get('/', controller.getHome)
+
+  return router
+}
+
+export default HomeRoutes

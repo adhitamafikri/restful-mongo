@@ -1,15 +1,18 @@
+import { Router } from 'express'
 import { BASE_URL } from '@config/url'
-import homeRoute from './home'
-import postsRoute from './posts'
+import HomeRoutes from './home'
+import PostsRoutes from './posts'
 
 /**
- * @param {Express} express an express instance
+ * @param {express} app an express instance
  */
-const routes = (router) => {
-  console.log('instance of express', router)
-  router.use(`${BASE_URL}/`, homeRoute)
-  router.use(`${BASE_URL}/posts`, postsRoute)
+const loadRoutes = (app) => {
+  console.log('#######router loader function')
+  const router = Router()
+
+  app.use(`${BASE_URL}/`, HomeRoutes(router))
+  // app.use(`${BASE_URL}/posts`, PostsRoute(router))
 }
 
 
-export default routes
+export default loadRoutes
