@@ -1,13 +1,10 @@
 import express from 'express'
-
 const router = express.Router()
 
-router.get('/posts', (req, res) => {
+router.get('/', (req, res) => {
   res.json({
-    message: {
-      result: {
-        message: 'All Posts'
-      }
+    result: {
+      message: 'All Posts'
     }
   })
 })
