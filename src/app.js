@@ -2,6 +2,8 @@ import express from 'express'
 import dotenv from 'dotenv'
 import 'dotenv/config'
 
+import appRoutes from '@routes'
+
 import { ConnectDB } from '@database/connection'
 
 const app = express()
@@ -9,17 +11,7 @@ const app = express()
 // Middlewares
 
 // Routes
-app.get('/', (req, res) => {
-  res.json({
-    message: 'Heyyy'
-  })
-})
-
-app.get('/posts', (req, res) => {
-  res.json({
-    message: 'All Posts'
-  })
-})
+app.use('/restful/v1', appRoutes)
 
 // Connect DB
 ConnectDB()
