@@ -1,13 +1,9 @@
-const PostsService = {
-  getPosts: function() {
-    console.log('getposts from services')
-    return 'blabla'
-  },
-
-  saveNewPost: function() {
-    console.log('save new post from services')
-    return 'blabla'
-  }
+export function getPosts() {
+  console.log('getposts from services')
+  return 'Response posts services'
 }
 
-export default PostsService
+export function saveNewPost() {
+  console.log('save new post from services')
+  return 'Response posts services'
+}

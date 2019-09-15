@@ -1,11 +1,4 @@
-function HomeService() {
-  console.log('Welcome to HomService!')
+export function getHome() {
+  console.log('get home from service')
+  return 'Result from home service'
 }
-
-HomeService.prototype = {
-  getHome: function() {
-    console.log('get home from service')
-  }
-}
-
-export default HomeService

@@ -1,17 +1,8 @@
-import services from '@services'
+import * as HomeService from '@services/home'
 
-function HomeController() {
-  this._name = 'sdfsd'
-  console.log('Welcome to HomeController!', this._name)
+export function getHome(req, res, next) {
+  const result = HomeService.getHome()
+  res.json({
+    result: result
+  })
 }
-
-HomeController.prototype = {
-  getHome: function(req, res, next) {
-    console.log('Getting Home')
-    res.json({
-      result: 'Yeay'
-    })
-  }
-}
-
-export default HomeController

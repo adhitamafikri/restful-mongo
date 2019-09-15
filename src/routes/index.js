@@ -4,14 +4,20 @@ import HomeRoutes from './home'
 import PostsRoutes from './posts'
 
 /**
- * @param {express} app an express instance
+ * @param {express.Router} router
  */
-const loadRoutes = (app) => {
+const loadRoutes = () => {
   console.log('#######router loader function')
   const router = Router()
 
-  app.use(`${BASE_URL}/`, HomeRoutes(router))
-  // app.use(`${BASE_URL}/posts`, PostsRoute(router))
+  const routeStack = [
+    HomeRoutes(router),
+    PostsRoutes(router),
+  ]
+
+  router.use(routeStack)
+
+  return router
 }
 
 

@@ -1,4 +1,4 @@
-import controllers from '@controllers'
+import * as HomeController from '@controllers/home'
 
 /**
  * @param {express.Router} router
@@ -6,9 +6,8 @@ import controllers from '@controllers'
  */
 function HomeRoutes(router) {
   console.log('In the HomeRoutes!')
-  const controller = new controllers.HomeController()
 
-  router.get('/', controller.getHome)
+  router.get('/', HomeController.getHome)
 
   return router
 }
