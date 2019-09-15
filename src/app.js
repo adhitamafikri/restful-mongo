@@ -1,8 +1,11 @@
-const express = require('express');
-const dotenv = require('dotenv')
+import express from 'express'
+import dotenv from 'dotenv'
+import 'dotenv/config'
+
+import { ConnectDB } from '@database/connection'
 
 const app = express()
-dotenv.Load()
+
 // Middlewares
 
 // Routes
@@ -18,6 +21,8 @@ app.get('/posts', (req, res) => {
   })
 })
 
+// Connect DB
+ConnectDB()
 
 app.listen('4005',function() {
   console.log('running on :4005')

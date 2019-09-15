@@ -1,7 +1,0 @@
-const DB_NAME = process.env.DB_NAME
-const DB_PORT = process.env.DB_PORT
-
-module.exports = {
-  DB_NAME,
-  DB_PORT
-}
