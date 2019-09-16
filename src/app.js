@@ -3,6 +3,7 @@ import bodyParser from 'body-parser'
 import 'module-alias/register'
 import 'dotenv/config'
 
+import { APP_PORT } from '@config/app'
 import { BASE_URL } from '@config/url'
 import { ConnectDB } from '@database/mongo/connection'
 import loadRoutes from '@routes'
@@ -18,6 +19,6 @@ app.use(`${BASE_URL}`, loadRoutes())
 // Connect DB
 ConnectDB()
 
-app.listen('4005', () => {
-  console.log('running on :4005')
+app.listen(APP_PORT, () => {
+  console.log(`running on :4005 ${APP_PORT}`)
 })
