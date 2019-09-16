@@ -3,16 +3,16 @@ import mongoose from 'mongoose'
 const PostsSchema = mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   date: {
     type: Date,
-    default: Date.now()
-  }
+    default: Date.now(),
+  },
 })
 
 export default mongoose.model('Posts', PostsSchema)
