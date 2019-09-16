@@ -8,6 +8,15 @@
   "scripts": {
     "start": "node_modules/nodemon/bin/nodemon.js --exec babel-node src/app.js"
   },
+  "_moduleAliases": {
+    "@config": "src/config",
+    "@routes": "src/routes",
+    "@database": "src/database",
+    "@models": "src/models",
+    "@controllers": "src/controllers",
+    "@services": "src/services",
+    "@repositories": "src/repositories"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.6.1",
@@ -17,6 +26,8 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "module-alias": "^2.2.1",
+    "mongoose": "^5.7.1"
   }
 }

@@ -1,5 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import 'module-alias/register'
 import 'dotenv/config'
 
 import { BASE_URL } from '@config/url'
